@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 type Language = 'en' | 'fr';
@@ -49,6 +48,12 @@ const translations = {
     
     // Contact
     'contact.title': 'Contact Us',
+    'contact.booking.title': 'Book a Free Consultation',
+    'contact.booking.description': 'Schedule a 30-minute call to discuss your project and get expert advice.',
+    'contact.booking.cta': 'Book a Call',
+    'contact.booking.benefit1': '30-minute free consultation',
+    'contact.booking.benefit2': 'Expert technical advice',
+    'contact.booking.benefit3': 'Project scope discussion',
     'contact.form.name': 'Name',
     'contact.form.email': 'Email',
     'contact.form.company': 'Company',
@@ -115,6 +120,12 @@ const translations = {
     
     // Contact
     'contact.title': 'Nous Contacter',
+    'contact.booking.title': 'Réserver une Consultation Gratuite',
+    'contact.booking.description': 'Planifiez un appel de 30 minutes pour discuter de votre projet et obtenir des conseils d\'experts.',
+    'contact.booking.cta': 'Réserver un Appel',
+    'contact.booking.benefit1': 'Consultation gratuite de 30 minutes',
+    'contact.booking.benefit2': 'Conseils techniques d\'experts',
+    'contact.booking.benefit3': 'Discussion sur la portée du projet',
     'contact.form.name': 'Nom',
     'contact.form.email': 'Email',
     'contact.form.company': 'Entreprise',

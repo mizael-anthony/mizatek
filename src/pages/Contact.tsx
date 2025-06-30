@@ -1,10 +1,10 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Calendar, Clock, Users } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
 
@@ -44,6 +44,11 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
+  const handleBookingClick = () => {
+    // Replace with your actual cal.com booking link
+    window.open('https://cal.com/mizatech/consultation', '_blank');
+  };
+
   return (
     <div className="bg-white">
       {/* Hero Section */}
@@ -58,8 +63,62 @@ const Contact = () => {
         </div>
       </section>
 
+      {/* Book a Call Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Card className="border-0 shadow-2xl bg-gradient-to-br from-mizatech-orange/5 to-white">
+            <CardHeader className="text-center pb-8">
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 bg-mizatech-orange/10 rounded-full flex items-center justify-center">
+                  <Calendar className="w-8 h-8 text-mizatech-orange" />
+                </div>
+              </div>
+              <CardTitle className="text-3xl font-bold text-mizatech-dark">
+                {t('contact.booking.title')}
+              </CardTitle>
+              <p className="text-mizatech-gray mt-4 text-lg">
+                {t('contact.booking.description')}
+              </p>
+            </CardHeader>
+            <CardContent className="p-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-mizatech-orange/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Clock className="w-6 h-6 text-mizatech-orange" />
+                  </div>
+                  <p className="text-mizatech-dark font-medium">{t('contact.booking.benefit1')}</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-mizatech-orange/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Users className="w-6 h-6 text-mizatech-orange" />
+                  </div>
+                  <p className="text-mizatech-dark font-medium">{t('contact.booking.benefit2')}</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-mizatech-orange/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Calendar className="w-6 h-6 text-mizatech-orange" />
+                  </div>
+                  <p className="text-mizatech-dark font-medium">{t('contact.booking.benefit3')}</p>
+                </div>
+              </div>
+              <div className="text-center">
+                <Button
+                  onClick={handleBookingClick}
+                  size="lg"
+                  className="bg-mizatech-orange hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200"
+                  aria-label="Book a consultation call"
+                >
+                  <Calendar className="w-5 h-5 mr-2" />
+                  {t('contact.booking.cta')}
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Contact Form Section */}
-      <section className="py-24">
+      <section className="py-24 bg-mizatech-light">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="border-0 shadow-2xl">
             <CardHeader className="text-center pb-8">
@@ -192,7 +251,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Info Section */}
-      <section className="py-24 bg-mizatech-light">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
